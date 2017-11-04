@@ -20,4 +20,4 @@ This Vagrant file will create a sandbox environment to develop  Ansible playbook
 2. `cd` into the root directory of this project
 3. Run `vagrant up` to begin provisioning virtual machines
 4. Once the virtual machines have been provisioned, run `vagrant ssh mgmt` to access the management box
-5. Run `ansible windows -i /vagrant/sample/test-inventory -m win_ping` to verify connectivity
+5. Run `ansible windows -i /vagrant/inventory -m win_ping` to verify connectivity to Windows nodes and `ansible linux -i /vagrant/inventory -m ping` for Linux nodes
