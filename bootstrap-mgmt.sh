@@ -2,6 +2,7 @@
 
 # install ansible (http://docs.ansible.com/intro_installation.html)
 #sudo rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install -y epel-release
 sudo yum install -y ansible
 sudo yum install -y git
 
