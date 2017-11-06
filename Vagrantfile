@@ -7,9 +7,8 @@ Vagrant.configure("2") do |config|
 
   # create a centos 7 vm with ansible
   config.vm.define :mgmt do |mgmt_config|
-      mgmt_config.vm.box = "centos/7"
+      mgmt_config.vm.box = "geerlingguy/centos7"
       mgmt_config.vm.hostname = "mgmt"
-      mgmt_config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
       mgmt_config.vm.network :private_network, ip: "10.0.15.10", auto_correct: true
       mgmt_config.vm.provider "virtualbox" do |vb|
         vb.memory = "256"
@@ -20,9 +19,8 @@ Vagrant.configure("2") do |config|
   # create some centos 7 vms
   (1..1).each do |i|
     config.vm.define "linnode#{i}" do |node|
-      node.vm.box = "centos/7"
+      node.vm.box = "geerlingguy/centos7"
       node.vm.hostname = "linnode#{i}"
-      node.vm.synced_folder ".", "/vagrant", type: "virtualbox"
       node.vm.network :private_network, ip: "10.0.15.2#{i}"
       node.vm.network "forwarded_port", guest: 80, host: 80, auto_correct: true
       node.vm.network "forwarded_port", guest: 443, host: "943#{i}", auto_correct: true
