@@ -1,4 +1,4 @@
-[windows:children]
+[windows]
 winnode1
 winnode2
 winnode3
@@ -9,7 +9,7 @@ winnode7
 winnode8
 winnode9
 
-[linux:children]
+[linux]
 linnode1
 linnode2
 linnode3
