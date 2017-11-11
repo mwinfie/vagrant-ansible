@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
       node.vm.box = "geerlingguy/centos7"
       node.vm.hostname = "linnode#{i}"
       node.vm.network :private_network, ip: "10.0.15.2#{i}"
-      node.vm.network "forwarded_port", guest: 80, host: 80, auto_correct: true
+      node.vm.network "forwarded_port", guest: 80, host: "908#{i}", auto_correct: true
       node.vm.network "forwarded_port", guest: 443, host: "943#{i}", auto_correct: true
       node.vm.provider "virtualbox" do |vb|
         vb.memory = "256"
