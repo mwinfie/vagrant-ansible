@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     mgmt_config.vm.provider "virtualbox" do |vb|
       vb.memory = "256"
     end
+    mgmt_config.vm.synced_folder "../", "/git"
     mgmt_config.vm.provision :shell, path: "bootstrap-mgmt.sh"
   end
  
@@ -34,7 +35,7 @@ Vagrant.configure("2") do |config|
   # create some windows server 2012 r2 vms
   (1..1).each do |i|
     config.vm.define "winnode#{i}" do |node|
-      node.vm.box = "devopsgroup-io/windows_server-2012r2-standard-amd64-nocm"
+      node.vm.box = "mwinfie/eval-win2012r2-standard"
       node.vm.hostname = "winnode#{i}"
       node.vm.communicator = "winrm"
       node.vm.network :private_network, ip: "10.0.15.3#{i}"

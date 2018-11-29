@@ -9,6 +9,8 @@ sudo yum install -y git
 # install packages for ansible windows support
 sudo yum install -y python-pip
 sudo pip install --upgrade pip
+sudo pip uninstall -y pyOpenSSL
+sudo pip install pyOpenSSL
 sudo pip install requests
 sudo pip install pywinrm
 sudo pip install pywinrm[credssp]
