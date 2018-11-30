@@ -11,8 +11,8 @@ winnode1
 
 [linux]
 linnode1
-linnode2
-linnode3
+#linnode2
+#linnode3
 #linnode4
 #linnode5
 #linnode6
@@ -27,7 +27,7 @@ linux
 [windows:vars]
 ansible_user=vagrant
 ansible_password=vagrant
-ansible_port=55986
+ansible_port=5986
 ansible_connection=winrm
 ansible_winrm_transport=ntlm
 ansible_winrm_server_cert_validation=ignore
